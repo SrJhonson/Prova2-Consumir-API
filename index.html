@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Digimon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <input v-model="name" placeholder="Digite o nome do Digimon">
+        <button @click="getDigimonByName">Buscar por nome</button>
+        <input v-model="level" placeholder="Digite o Level do Digimon">
+        <button @click="getDigimonByLevel">Buscar por Level</button>
+        <div class="card" v-for="digimon in digimons">
+            <img :src="digimon.img" alt="digimon image">
+            <div class="container">
+                <h2>{{ digimon.name }}</h2>
+                <p>{{ digimon.level }}</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="index.js"></script>
+</body>
+</html>
